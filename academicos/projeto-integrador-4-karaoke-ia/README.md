@@ -16,10 +16,6 @@ Um karaokê que usa inteligência artificial para **separar o vocal do instrumen
 - Python
 - Modelos de IA para separação de áudio
 
-## Minha participação
-
-<!-- Descreva aqui o que você fez no grupo: back-end, banco de dados, integração com a IA etc. -->
-
 ## Aprendizados
 
 - Aplicar um modelo de IA em um produto que funciona de verdade, e não só em teste
