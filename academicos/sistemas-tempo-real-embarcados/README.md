@@ -14,10 +14,6 @@ Montagem de um **braço mecânico** controlado por um sistema embarcado, que res
 | `esquemas/` | Esquemas de ligação e montagem |
 | `registros/` | Fotos e vídeos da montagem |
 
-## Tecnologias
-
-<!-- Ex.: Arduino, ESP32, servomotores, C/C++ -->
-
 ## Aprendizados
 
 - O lado físico da computação: como o software controla um dispositivo real.
