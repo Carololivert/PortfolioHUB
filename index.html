@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Caroline Oliveira · Portfólio</title>
+<meta name="description" content="Portfólio de Caroline Machado de Oliveira — Ciência da Computação no CEUB. Python, automação, redes e IA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f6f4ef; --surface:#ffffff; --ink:#1c1b19; --muted:#5f5b53; --line:#e3ded4;
+    --accent:#2f6b4f; --accent-soft:#e3efe8; --tag:#efebe2;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#121412; --surface:#1a1d1b; --ink:#ecebe6; --muted:#a3a39b; --line:#2b2f2c;
+      --accent:#7cc39c; --accent-soft:#1f2c25; --tag:#232724;
+    }
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font:16px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:980px;margin:0 auto;padding:0 20px}
+
+  nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+  .logo{font-family:"JetBrains Mono",monospace;font-size:14px;text-decoration:none}
+  .logo b{color:var(--accent)}
+  nav ul{display:flex;gap:22px;list-style:none;font-size:14px}
+  nav ul a{text-decoration:none;color:var(--muted)}
+  nav ul a:hover{color:var(--ink)}
+
+  header{padding:72px 0 56px}
+  .hero{display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
+  .kicker{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--accent);margin-bottom:14px}
+  h1{font-family:Fraunces,Georgia,serif;font-weight:700;font-size:clamp(38px,6vw,62px);line-height:1.05;letter-spacing:-.02em}
+  .lead{margin-top:20px;font-size:18px;color:var(--muted);max-width:52ch}
+  .actions{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid var(--line);background:var(--surface)}
+  .btn.primary{background:var(--accent);border-color:var(--accent);color:var(--bg)}
+  .btn:hover{transform:translateY(-1px)}
+  .photo{width:240px;height:240px;border-radius:50%;object-fit:cover;border:6px solid var(--surface);box-shadow:0 0 0 1px var(--line),0 18px 40px -20px rgba(0,0,0,.35)}
+
+  section{padding:56px 0;border-top:1px solid var(--line)}
+  h2{font-family:Fraunces,Georgia,serif;font-weight:500;font-size:30px;letter-spacing:-.01em;margin-bottom:8px}
+  .sub{color:var(--muted);margin-bottom:30px}
+  .about p{max-width:68ch;margin-bottom:16px}
+
+  .areas{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+  .area{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px}
+  .area .n{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--accent)}
+  .area h3{font-size:16px;margin:6px 0 4px}
+  .area p{font-size:14px;color:var(--muted);line-height:1.5}
+
+  .group-title{font-family:"JetBrains Mono",monospace;font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:8px 0 14px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-bottom:34px}
+  .card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;text-decoration:none;transition:border-color .2s,transform .2s}
+  .card:hover{border-color:var(--accent);transform:translateY(-2px)}
+  .card .disc{font-size:13px;color:var(--accent);font-weight:600}
+  .card h3{font-family:Fraunces,Georgia,serif;font-weight:500;font-size:21px;margin:6px 0 8px}
+  .card p{font-size:15px;color:var(--muted);flex:1}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+  .tags span{font-family:"JetBrains Mono",monospace;font-size:12px;background:var(--tag);padding:3px 9px;border-radius:6px}
+  .card .more{margin-top:16px;font-size:14px;font-weight:600}
+
+  .docs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+  .doc{background:var(--accent-soft);border-radius:16px;padding:22px;text-decoration:none}
+  .doc h3{font-size:17px;margin-bottom:4px}
+  .doc p{font-size:14px;color:var(--muted)}
+
+  .stack{display:flex;flex-wrap:wrap;gap:8px}
+  .stack span{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:7px 14px;font-size:14px}
+
+  footer{border-top:1px solid var(--line);padding:40px 0 60px;color:var(--muted);font-size:14px}
+  footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
+  footer a{color:var(--ink)}
+  .ver{font-family:"JetBrains Mono",monospace;font-size:12px}
+
+  @media (max-width:720px){
+    nav ul{display:none}
+    header{padding:44px 0 40px}
+    .hero{grid-template-columns:1fr;gap:28px}
+    .photo{width:150px;height:150px;order:-1}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#">carol<b>@</b>portfoliohub</a>
+    <ul>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#documentos">Documentos</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap hero">
+    <div>
+      <p class="kicker">// Ciência da Computação · CEUB · 8º semestre</p>
+      <h1>Caroline<br>Machado de Oliveira</h1>
+      <p class="lead">Trabalho com redes em um provedor de internet e uso Python para transformar tarefas manuais em automação. Aqui estão os projetos que desenvolvo na faculdade e fora dela.</p>
+      <div class="actions">
+        <a class="btn primary" href="#projetos">Ver projetos</a>
+        <a class="btn" href="https://www.linkedin.com/in/caroline-m-oliveira-b0329b176" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="btn" href="https://github.com/Carololivert" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </div>
+    <img class="photo" src="assets/img/caroline.jpg" alt="Foto de Caroline Machado de Oliveira">
+  </div>
+</header>
+
+<section id="sobre">
+  <div class="wrap about">
+    <h2>Sobre mim</h2>
+    <p class="sub">Como cheguei na computação</p>
+    <p>Minha família é dona de uma provedora de internet em Planaltina-DF, e entrei em Ciência da Computação para conseguir contribuir com a empresa com conhecimento técnico. Hoje trabalho com redes na operação e venho automatizando em Python os relatórios de controle que antes eram feitos à mão.</p>
+    <p>O interesse por jogos online também me trouxe até aqui: desde cedo eu queria entender o que acontece do outro lado da tela, como conexão, latência e servidores.</p>
+
+    <div class="areas" style="margin-top:30px">
+      <div class="area"><span class="n">01</span><h3>Redes e Infraestrutura</h3><p>Roteamento, desempenho e disponibilidade na operação do provedor.</p></div>
+      <div class="area"><span class="n">02</span><h3>Automação</h3><p>Python para transformar relatórios manuais em rotinas automáticas.</p></div>
+      <div class="area"><span class="n">03</span><h3>Segurança Digital</h3><p>Proteção da rede e dos dados de clientes.</p></div>
+      <div class="area"><span class="n">04</span><h3>Inteligência Artificial</h3><p>Separação de áudio aplicada a um produto real.</p></div>
+      <div class="area"><span class="n">05</span><h3>Embarcados</h3><p>O lado físico da computação, com um braço mecânico.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="projetos">
+  <div class="wrap">
+    <h2>Projetos</h2>
+    <p class="sub">Cada projeto tem uma pasta no repositório com a documentação completa.</p>
+
+    <p class="group-title">Acadêmicos</p>
+    <div class="cards">
+      <a class="card" href="https://github.com/Carololivert/PortfolioHUB/tree/main/academicos/projeto-integrador-4-karaoke-ia" target="_blank" rel="noopener">
+        <span class="disc">Projeto Integrador 4</span>
+        <h3>Karaokê com IA</h3>
+        <p>Karaokê que usa inteligência artificial para separar o vocal do instrumental e exibir a letra das músicas.</p>
+        <div class="tags"><span>Python</span><span>IA</span></div>
+        <span class="more">Ver projeto →</span>
+      </a>
+      <a class="card" href="https://github.com/Carololivert/PortfolioHUB/tree/main/academicos/sistemas-tempo-real-embarcados" target="_blank" rel="noopener">
+        <span class="disc">Sistemas em Tempo Real e Embarcados</span>
+        <h3>Braço mecânico</h3>
+        <p>Montagem de um braço mecânico controlado por um sistema embarcado que responde a comandos em tempo real.</p>
+        <div class="tags"><span>Embarcados</span><span>Tempo real</span></div>
+        <span class="more">Ver projeto →</span>
+      </a>
+      <a class="card" href="https://github.com/Carololivert/PortfolioHUB/tree/main/academicos/bootcamp-i-study-hub" target="_blank" rel="noopener">
+        <span class="disc">Bootcamp I</span>
+        <h3>Study Hub</h3>
+        <p>Planejamento da organização do meu material acadêmico, que deu origem a este portfólio.</p>
+        <div class="tags"><span>Git</span><span>GitHub</span><span>Documentação</span></div>
+        <span class="more">Ver projeto →</span>
+      </a>
+      <a class="card" href="https://github.com/Carololivert/PortfolioHUB/tree/main/academicos/testes-qualidade-software" target="_blank" rel="noopener">
+        <span class="disc">Testes e Qualidade de Software</span>
+        <h3>Planos e casos de teste</h3>
+        <p>Resumos, planos de teste e casos de teste aplicados ao longo da disciplina.</p>
+        <div class="tags"><span>QA</span><span>Testes</span></div>
+        <span class="more">Ver projeto →</span>
+      </a>
+      <a class="card" href="https://github.com/Carololivert/PortfolioHUB/tree/main/academicos/seguranca-digital" target="_blank" rel="noopener">
+        <span class="disc">Segurança Digital</span>
+        <h3>Laboratórios de segurança</h3>
+        <p>Anotações, práticas de laboratório e estudos de vulnerabilidades em redes e dados.</p>
+        <div class="tags"><span>Redes</span><span>Segurança</span></div>
+        <span class="more">Ver projeto →</span>
+      </a>
+    </div>
+
+    <p class="group-title">Pessoais</p>
+    <div class="cards">
+      <a class="card" href="https://github.com/Carololivert/PortfolioHUB/tree/main/pessoais/automacao-relatorios-python" target="_blank" rel="noopener">
+        <span class="disc">Projeto profissional</span>
+        <h3>Automação de relatórios</h3>
+        <p>Scripts em Python que geram automaticamente os relatórios de controle de um provedor de internet, antes feitos à mão.</p>
+        <div class="tags"><span>Python</span><span>APIs REST</span><span>Automação</span></div>
+        <span class="more">Ver projeto →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="documentos">
+  <div class="wrap">
+    <h2>Documentos</h2>
+    <p class="sub">Entregas do Bootcamp I</p>
+    <div class="docs">
+      <a class="doc" href="https://github.com/Carololivert/PortfolioHUB/tree/main/documentacao" target="_blank" rel="noopener">
+        <h3>Study Hub — Documento Fase 1 ↗</h3>
+        <p>Perfil, interesses, arquitetura de pastas e matriz de disciplinas.</p>
+      </a>
+      <a class="doc" href="https://github.com/Carololivert/PortfolioHUB" target="_blank" rel="noopener">
+        <h3>Repositório PortfolioHUB ↗</h3>
+        <p>Código-fonte desta página, READMEs e histórico de versões.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Tecnologias</h2>
+    <p class="sub">O que uso no dia a dia e nos projetos</p>
+    <div class="stack">
+      <span>Python</span><span>Django</span><span>APIs REST</span><span>Git</span><span>GitHub</span><span>HTML</span><span>CSS</span><span>Redes</span>
+    </div>
+  </div>
+</section>
+
+<footer id="contato">
+  <div class="wrap row">
+    <div>
+      <p><strong style="color:var(--ink)">Caroline Machado de Oliveira</strong> · Brasília, DF</p>
+      <p><a href="https://www.linkedin.com/in/caroline-m-oliveira-b0329b176" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/Carololivert" target="_blank" rel="noopener">GitHub</a></p>
+    </div>
+    <p class="ver">PortfolioHUB · v1.1</p>
+  </div>
+</footer>
+
+</body>
+</html>
