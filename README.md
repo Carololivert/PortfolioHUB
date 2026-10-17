@@ -5,6 +5,7 @@ Portfólio acadêmico e profissional de **Caroline Machado de Oliveira**, estuda
 Este repositório reúne, em um só lugar, os projetos que desenvolvo na faculdade e fora dela. Ele é a evolução do **Study Hub**, planejado na Fase 1 do Bootcamp I.
 
 🌐 **Página do portfólio (GitHub Pages):** https://carololivert.github.io/PortfolioHUB/
+
 💼 **LinkedIn:** https://www.linkedin.com/in/caroline-m-oliveira-b0329b176
 
 ---
